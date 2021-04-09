@@ -1,10 +1,24 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Mukta', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        'custom-twitter':'#1DA1F2',
+      },
+      fontSize: {
+        'custom': '42px',
+    },
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -784,6 +798,7 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      'custom': '55%',
       full: '100%',
       screen: '100vw',
       min: 'min-content',
